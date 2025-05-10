@@ -36,3 +36,30 @@
     transform: rotate(360deg);
   }
 }
+
+.fc {
+  font-size: 14px; /* 모바일에서 글자 너무 크지 않게 */
+}
+
+.calendar-container {
+  width: 100%;
+  overflow-x: auto; /* 모바일에서 넘치면 스크롤 가능하게 */
+}
+
+.fc-toolbar.fc-header-toolbar {
+  flex-direction: column !important; /* 버튼을 아래로 배치 */
+  align-items: flex-start;
+  gap: 0.5rem;
+}
+
+@media (min-width: 640px) {
+  .fc-toolbar.fc-header-toolbar {
+    flex-direction: row !important; /* 큰 화면에선 원래대로 */
+    align-items: center;
+    justify-content: space-between;
+  }
+}
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
