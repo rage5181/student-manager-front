@@ -10,7 +10,7 @@ const GroupForm = ({ onGroupCreated }) => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const res = await axios.post('http://localhost:4000/api/groups/register', {name, description, "id":user.id });
+      const res = await axios.post('/groups/register', {name, description, "id":user.id });
       onGroupCreated(res.data); // 등록 후 콜백
       setName('');
       setDescription('');
