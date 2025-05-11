@@ -2,7 +2,7 @@
 import axios from 'axios';
 
 const axiosInstance = axios.create({
-  baseURL: 'http://localhost:4000/api', // 👉 여긴 백엔드 주소에 맞게 설정
+  baseURL: 'https://student-manager-backend-production.up.railway.app:8080/api', 
 });
 
 // 요청 보낼 때마다 자동으로 헤더에 토큰 포함
