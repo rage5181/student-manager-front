@@ -15,7 +15,7 @@ const StudentDetailPage = () => {
 
   const fetchStudent = async () => {
     try {
-      const res = await axios.get(`http://localhost:4000/api/students/${id}`);
+      const res = await axios.get(`/api/students/${id}`);
       setStudent(res.data);
       setForm(res.data);
     } catch (err) {
@@ -33,7 +33,7 @@ const StudentDetailPage = () => {
 
   const handleUpdate = async () => {
     try {
-      await axios.put(`http://localhost:4000/api/students/${id}`, form);
+      await axios.put(`/api/students/${id}`, form);
       alert('✅ 수정 완료!');
       navigate('/');
     } catch (err) {
@@ -46,7 +46,7 @@ const StudentDetailPage = () => {
     if (!confirm) return;
 
     try {
-      await axios.delete(`http://localhost:4000/api/students/${id}`);
+      await axios.delete(`/api/students/${id}`);
       alert('🗑️ 삭제 완료!');
       navigate('/');
     } catch (err) {

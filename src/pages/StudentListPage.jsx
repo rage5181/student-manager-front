@@ -15,7 +15,7 @@ const StudentListPage = () => {
 
   const fetchGroups = async () => {
     try {
-      const res = await axios.get('http://localhost:4000/api/groups');
+      const res = await axios.get('/api/groups');
       setGroups(res.data);
     } catch (err) {
       console.error('그룹 불러오기 실패:', err);
@@ -24,7 +24,7 @@ const StudentListPage = () => {
 
   const fetchStudents = async () => {
     try {
-      const res = await axios.get('http://localhost:4000/api/students');
+      const res = await axios.get('/api/students');
       setStudents(res.data);
     } catch (err) {
       console.error('❌ 목록 로딩 실패:', err);
@@ -49,7 +49,7 @@ const StudentListPage = () => {
 
   const handleAddStudent = async (newStudent) => {
     try {
-      const res = await axios.post('http://localhost:4000/api/students', newStudent);
+      const res = await axios.post('/api/students', newStudent);
       const updatedStudents = [...students, res.data];
       setStudents(updatedStudents);
     } catch (err) {

@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import axios from 'axios';
+import axios from '../api/axiosInstance'; // 인증 포함된 axios 인스턴스
 import { Link, useNavigate } from 'react-router-dom';
 
 function LoginPage({ setIsLoggedIn }) {
@@ -9,7 +9,7 @@ function LoginPage({ setIsLoggedIn }) {
 
   const handleLogin = async () => {
     try {
-      const res = await axios.post('http://localhost:4000/api/auth/login', { email, password });
+      const res = await axios.post('/auth/login', { email, password });
       
       const token = res.data.token;
       console.log('받은 토큰:', token); // 👈 확인용
