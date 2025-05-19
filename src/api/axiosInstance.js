@@ -2,7 +2,7 @@
 import axios from 'axios';
 
 const axiosInstance = axios.create({
-  baseURL: 'https://student-manager-backend-production.up.railway.app:8080/api', 
+  baseURL: process.env.REACT_APP_API_BASE_URL, 
 });
 
 // 요청 보낼 때마다 자동으로 헤더에 토큰 포함
