@@ -38,11 +38,11 @@ const ScheduleModal = ({ isOpen, onClose, selectedEvent }) => {
     try {
       if (selectedEvent) {
         // 수정
-        await axios.put(`/api/schedules/${selectedEvent.id}`, scheduleData);
+        await axios.put(`/schedules/${selectedEvent.id}`, scheduleData);
         console.log('수정 완료');
       } else {
         // 등록
-        await axios.post(`/api/schedules`, scheduleData);
+        await axios.post(`/schedules`, scheduleData);
         console.log('등록 완료');
       }
 
@@ -57,7 +57,7 @@ const ScheduleModal = ({ isOpen, onClose, selectedEvent }) => {
 
     if (window.confirm('정말 삭제하시겠습니까?')) {
       try {
-        await axios.delete(`/api/schedules/${selectedEvent.id}`);
+        await axios.delete(`/schedules/${selectedEvent.id}`);
         console.log('삭제 완료');
         onClose(); // 삭제 후 모달 닫기
       } catch (err) {
