@@ -15,7 +15,7 @@ const StudentDetailPage = () => {
 
   const fetchStudent = async () => {
     try {
-      const res = await axios.get(`/api/students/${id}`);
+      const res = await axios.get(`/students/${id}`);
       setStudent(res.data);
       setForm(res.data);
     } catch (err) {
