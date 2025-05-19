@@ -16,7 +16,7 @@ const Calendar = () => {
   // 일정 조회
   const fetchSchedules = async () => {
     try {
-      const res = await axios.get(`http://localhost:4000/api/schedules?user_id=${user?.id}`);
+      const res = await axios.get(`/schedules?user_id=${user?.id}`);
 
       console.log('백엔드 응답 >>', res.data);
 
