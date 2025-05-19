@@ -8,8 +8,8 @@ const Dashboard = () => {
   const location = useLocation();
 
   const navItems = [
-    { name: '학생 목록', path: '/' },
     { name: '그룹 목록', path: '/groups' },
+    { name: '학생 목록', path: '/' },
     { name: '일정 관리', path: '/calendar' },
     // { name: '설정', path: '/settings' }, // 나중에 추가 가능
   ];
@@ -18,7 +18,7 @@ const Dashboard = () => {
     <div className="flex h-screen">
       {/* Sidebar */}
       <div
-        className={`bg-blue-600 text-white w-64 p-4 space-y-4 
+        className={`bg-blue-600 text-white w-60 p-4 space-y-4 
         ${menuOpen ? 'block' : 'hidden'} 
         md:block fixed md:relative z-50`}
 
@@ -49,27 +49,23 @@ const Dashboard = () => {
         </nav>
 
       {/* TimeTech 로고 하단 고정 */}
-  <div className="absolute bottom-4 left-4 flex items-center space-x-1 text-sm font-bold text-pink-200 opacity-80">
+  <div className="absolute bottom-10 left-20 flex items-center space-x-1 text-sm font-bold text-pink-200 opacity-80">
     <span>Time</span>
+    
     <svg
       xmlns="http://www.w3.org/2000/svg"
       className="w-4 h-4 text-blue-200"
       fill="none"
       viewBox="0 0 20 20"
       stroke="currentColor"
-    >
+    >  
       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9.75 3L4.5 9.75M14.25 21l5.25-6.75M3 14.25l6.75 5.25M21 9.75l-6.75-5.25" />
-    </svg>
+    </svg> 
+
     <span>Tech</span>
   </div>
-      
-
-      
-        
+  
       </div>
-
-     
-
 
       {/* Mobile Toggle Button */}
       <button
