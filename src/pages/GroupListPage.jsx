@@ -11,7 +11,7 @@ const GroupPage = () => {
 
   const fetchGroups = async () => {
     try {
-      const res = await axios.get('http://localhost:4000/api/groups');
+      const res = await axios.get('/groups');
       setGroups(res.data);
     } catch (err) {
       console.error('그룹 불러오기 실패:', err);
@@ -26,7 +26,7 @@ const GroupPage = () => {
 
   const handleUpdateGroup = async (updatedGroup) => {
     try {
-      await axios.put(`http://localhost:4000/api/groups/${updatedGroup.id}`, updatedGroup);
+      await axios.put(`/groups/${updatedGroup.id}`, updatedGroup);
       fetchGroups();
       setIsEditModalOpen(false);
     } catch (err) {
@@ -36,7 +36,7 @@ const GroupPage = () => {
 
   const handleDeleteGroup = async (groupId) => {
     try {
-      await axios.delete(`http://localhost:4000/api/groups/${groupId}`);
+      await axios.delete(`/groups/${groupId}`);
       fetchGroups();
       setIsEditModalOpen(false);
     } catch (err) {
