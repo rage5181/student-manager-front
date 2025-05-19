@@ -9,8 +9,10 @@ function LoginPage({ setIsLoggedIn }) {
 
   const handleLogin = async () => {
     try {
+      console.log('로그인백엔드호출===');
+      console.log('========>>>',process.env.REACT_APP_API_BASE_URL);
       const res = await axios.post('/auth/login', { email, password });
-      
+      console.log('로그인백엔드응답===');
       const token = res.data.token;
       console.log('받은 토큰:', token); // 👈 확인용
      
